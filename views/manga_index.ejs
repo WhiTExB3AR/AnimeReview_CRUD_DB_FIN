@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">ANIME REVIEW</a>
+    <div class="menu-toggle"></div>
+    <nav>
+        <ul>
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="#" id="crud">Login</a></li>
+            <li><a href="/mangas" id="crud">CRUD Manga</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <div class="clearfloat"></div>
+</header>
+
+<div class="container">
+  <h2><%= title %></h2>
+  <a href="./add" class="btn btn-sm btn-primary">Create Manga</a><br/><br/>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>MangaID</th>
+        <th>MangaName</th>
+        <th>Author</th>
+        <th>Chapter</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% mangas.forEach(function(manga){ %>
+        <tr>
+            <td><%= manga.mangaId %></td>
+            <td><%= manga.titleName %></td>
+            <td><%= manga.author %></td>
+            <td><%= manga.chapter %></td>
+            <td>
+              <button class="btn btn-sm btn-primary">Edit</button>
+              <button class="btn btn-sm btn-danger">Delete</button>
+            </td>
+        </tr>
+    <% }); %>
+    </tbody>
+  </table>
+</div>
+ 
+</body>
+</html>
